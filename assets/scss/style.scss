@@ -1,0 +1,460 @@
+@import "mixins.scss";
+@import "fonts.scss";
+
+
+
+
+//ПЕРЕМЕННЫЕ=================================================================================================================================
+$minwidth:320px;
+$mw:880;
+$md1:$mw+12;
+$md2:767.98;
+$md3:767.98;
+$md4:479.98;
+//ПЕРЕМЕННЫЕ
+
+@import "null.scss";
+
+
+
+
+// ОБОЛОЧКА==================================================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+
+	// &.loaded {}
+}
+
+//ОСНОВНАЯ СЕТКА==============================================================================================================================
+.container {
+	max-width: $mw+px;
+	margin: 0 auto;
+	width: 100%;
+
+	@media (max-width:$md1+px) {
+		max-width: 750px;
+	}
+
+	@media (max-width:$md2+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+
+@import "header.scss";
+@import "forms.scss";
+
+// ОСНОВНОЙ БЛОК===============================================================================================================================
+.private {
+	@include flexbox();
+	background-color: #000;
+	margin: 0px 0px 75px 0px;
+	@media (max-width:$md2+px) {
+		margin: 0px 0px 40px 0px;
+	}
+}
+
+.private__column {
+	flex: 0 0 50%;
+	@media (max-width:$md2+px){
+		flex: 1 1 100%;
+		&:first-child{
+			display: none;
+		}
+	}
+	
+}
+
+.ibg {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.ibg img {
+	display: none;
+}
+
+.private__image {
+	height: 100%;
+}
+
+.private-body {
+	padding: 75px 0px 75px 60px;
+	@media (max-width:$md1+px){
+		padding: 30px 20px 30px 30px;
+	}
+}
+
+.private-body-content{
+	max-width: 305px;
+}
+
+.private-body__title {
+	font-family: 'AkzidenzGroteskBQCondensedBold';
+	font-size: 50px;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	color: #ffffff;
+	margin: 0px 0px 30px 0px;
+	@media (max-width:$md1+px) {
+		font-size: 35px;
+		margin: 0px 0px 20px 0px;
+	}
+}
+
+.private-body__text {
+	font-size: 15px;
+	line-height: 25px;
+	color: #fff;
+	margin: 0px 0px 50px 0px;
+	@media (max-width:$md1+px) {
+		margin: 0px 0px 30px 0px;
+	}
+}
+
+.private-body-buttons {@include flexbox();align-items: center;}
+
+// .private-body-buttons__item {}
+
+
+.private-body-buttons__link {
+	font-family: Bebas;
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 15px;
+	text-decoration: underline;
+	margin: 0px 0px 0px 15px;
+	letter-spacing: 1.5px;
+}
+
+// PRODUCTS===================================================================================================================================
+
+.products {
+	margin: 0px 0px 40px 0px;
+	@media (max-width:$md2+px) {
+		margin: 0;
+	}
+}
+
+.products-body {
+	@include flexbox();
+	@media (max-width:$md2+px){
+		flex-wrap: wrap;
+	}
+}
+
+.products__column {
+	flex: 0 0 25%;
+	margin: 0px 0px 40px 0px;
+	@media (max-width:$md2+px) {
+		flex: 0 0 50%;
+	}
+	@media (max-width:380px) {
+		flex: 1 1 100%;
+	}
+}
+
+.products-item {
+	@include flexbox();
+	height: 100%;
+	flex-direction: column;
+}
+
+.products-item__image {
+	display: block;
+	padding: 0px 0px 100% 0px;
+	margin: 0px 0px 25px 0px;
+	@media (max-width:380px) {
+		margin-bottom: 15px;
+	}
+}
+
+.products-item__title {
+	height: 50%;
+	overflow: hidden;
+	padding: 0px 10px 0px 0px;
+	max-width: 185px;
+	display: block;
+	font-size: 25px;
+	font-family: 'AkzidenzGroteskBQCondensedBold';
+	color: #000;
+	letter-spacing: 2.5px;
+	text-transform: uppercase;
+	margin: 0px 0px 30px 0px;
+	@media (max-width:380px) {
+		max-width: none;
+		height: auto;
+		overflow: visible;
+		margin-bottom: 20px;
+	}
+}
+
+.products-item__text {
+	flex: 1 1 auto;
+	padding: 0px 10px 0px 0px;
+	max-width: 185px;
+	font-size: 15px;
+	line-height: 25px;
+	margin: 0px 0px 25px 0px;
+	@media (max-width:380px) {
+		max-width: none;
+		margin-bottom: 15px;
+	}
+}
+
+.products-item__btn {
+	margin: 0px 0px 29px 0px;
+}
+
+.products-item__link {
+	font-family: Bebas;
+	text-transform: uppercase;
+	color: #000;
+	text-decoration: underline;
+	letter-spacing: 1.5px;
+	font-size: 15px;
+}
+
+// WHY=======================================================================================================================================
+
+.why {}
+
+.why-top {
+	@include flexbox();
+	background-color: #000;
+}
+
+.why-top__column {
+	flex: 0 0 50%;
+	@media (max-width: $md1+px){
+		flex: 1 1 100%;
+		&:last-child{
+			display: none;
+		}
+	}
+}
+
+.why-top__text {
+	text-align: right;
+	color: #fff;
+	font-family: 'AkzidenzGroteskBQCondensedBold';
+	font-size: 50px;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	padding: 50px 60px 50px 0px;
+	@media (max-width: $md1+px) {
+		padding: 30px 0px;
+		font-size: 40px;
+		text-align: center;
+	}
+	@media (max-width: $md2+px) {
+		padding: 20px 0px;
+		font-size: 30px;
+		text-align: center;
+	}
+}
+
+.why-top__image {
+	height: 100%;
+}
+
+.why-body {
+	padding: 50px 0px 0px 0px;
+	background-color: #ebebeb;
+	@media (max-width: $md4+px) {
+		padding: 30px 0px 0px 0px;
+	}
+
+}
+
+.why-body-row{
+	@include flexbox();
+	flex-wrap: wrap;
+}
+
+.why-body__column {
+	flex: 0 0 50%;
+	margin: 0px 0px 50px 0px;
+	@media (max-width: $md1+px) {
+		flex: 1 1 100%;
+	}
+	@media (max-width: $md4+px) {
+		flex: 1 1 100%;
+		margin: 0px 0px 30px 0px;
+	}
+}
+
+.why-body-item {
+	@include flexbox();
+}
+
+.why-body-item__icon {
+	flex: 0 0 100px;
+	width: 100px;
+	height: 100px;
+	@include flexbox();
+	justify-content: center;
+	align-items: center;
+	background-color: #000;
+	@media (max-width:$md4+px){
+		flex: 0 0 80px;
+		width: 80px;
+		padding: 15px;
+		img{max-width: 100%;}
+	}
+}
+
+.why-body-item-body {
+	flex: 1 1 100%;
+	@include flexbox();
+	flex-direction: column;
+	padding: 0px 0px 0px 11px;
+}
+
+.why-body-item-body__title {
+	flex: 1 1 auto;
+	font-family: 'AkzidenzGroteskBQCondensedBold';
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	font-size: 25px;
+	@media (max-width: $md1+px) {
+		font-size: 20px;
+	}
+}
+
+.why-body-item-body__text {
+	font-size: 15px;
+	padding: 0px 15px 0px 0px;
+	line-height: 25px;
+}
+
+// CONTACTS==============================================================================================================================
+
+.contacts {
+	padding: 80px 0px 0px 0px;
+	@media (max-width:$md2+px){
+		padding: 30px 0px 0px 0px;
+	}
+}
+
+.contacts-top {}
+
+.contacts__title {
+	font-family: 'AkzidenzGroteskBQCondensedBold';
+	text-transform: uppercase;
+	font-size: 50px;
+	letter-spacing: 5px;
+	margin: 0px 0px 30px 0px;
+
+}
+
+.contacts-body {
+	@include flexbox();
+	flex-wrap: wrap;
+}
+
+.contacts-body__column {
+	flex: 0 0 50%;
+	margin-bottom: 20px;
+	@media (max-width:$md2+px){
+		flex: 1 1 100%;
+	}
+}
+
+.contacts-body__item {
+	font-size: 15px;
+	color: #000;
+	display: inline-block;
+	line-height: 27px;
+	padding: 0px 0px 0px 35px;
+}
+
+.contacts-body__item--1 {
+	background: url(/img/contacts/01.svg)left no-repeat;
+}
+
+.contacts-body__item--2 {
+	background: url(/img/contacts/02.svg)left no-repeat;
+}
+
+.contacts-body__item--3 {
+	background: url(/img/contacts/03.svg)left no-repeat;
+}
+
+.contacts-social {
+	@include flexbox();
+}
+
+.contacts-social__item {
+	margin: 0px 30px 0px 0px;
+	&:last-child{
+		margin: 0px 0px 0px 0px;
+	}
+}
+
+.contacts-content {
+	@include flexbox();
+	background-color: #000;
+	@media (max-width:$md2+px){
+		display: block;
+	}
+}
+
+.contacts-content__column {
+	flex: 0 0 50%;
+}
+
+.contacts-content__map {
+	height: 100%;
+	@media (max-width:$md2+px) {
+		height: 300px;
+	}
+}
+
+.contacts-content-form {
+	padding: 55px 60px;
+	@media (max-width:$md2+px) {
+		padding: 30px;
+	}
+}
+
+.contacts-content-form__title {
+	font-family: 'AkzidenzGroteskBQCondensedBold';
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 25px;
+	letter-spacing: 5px;
+	margin: 0px 0px 30px 0px;
+}
+
+.contacts-content-form-body {
+	max-width: 375px;
+	@media (max-width:$md2+px) {
+		max-width: none;
+	}
+}
+
+.contacts-content-form-line {
+	margin: 0px 0px 25px 0px;
+}
+
+.contacts-content-form-button {}
+
+.contacts-content-form__btn {}
+
+// CONTACTS================================================================================================================================
+
+// ОСНОВНОЙ БЛОК===========================================================================================================================
+
+// FOOTER==================================================================================================================================
+@import "footer.scss";
+// FOOTER==================================================================================================================================
+
+
+
+
+
+
